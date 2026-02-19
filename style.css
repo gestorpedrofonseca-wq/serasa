@@ -489,3 +489,326 @@ p {
     color: var(--text-muted);
     font-size: 13px;
 }
+
+/* ============================
+   MOBILE RESPONSIVE STYLES
+   ============================ */
+
+/* Ensure smooth scrolling & proper viewport on mobile */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Safe area padding for phones with notches */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .main-footer {
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+
+    .main-header {
+        padding-top: calc(18px + env(safe-area-inset-top));
+    }
+}
+
+/* ---- Small phones (max-width: 480px) ---- */
+@media (max-width: 480px) {
+
+    /* Header */
+    .main-header {
+        padding: 12px 0;
+    }
+
+    .header-container {
+        padding: 0 16px;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    /* Cards */
+    .card {
+        padding: 24px 18px;
+        border-radius: var(--radius-md);
+    }
+
+    /* Forms */
+    .input-field {
+        padding: 14px 16px;
+        font-size: 16px;
+        /* Prevents iOS zoom on focus */
+        border-radius: var(--radius-sm);
+    }
+
+    .input-label {
+        font-size: 13px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    /* Buttons - touch friendly */
+    .btn {
+        padding: 14px 20px;
+        font-size: 15px;
+        min-height: 48px;
+        /* Minimum touch target */
+        border-radius: var(--radius-full);
+    }
+
+    .btn-outline {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    /* Dashboard */
+    .subtitle {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .consequences-list {
+        margin: 24px 0;
+    }
+
+    .consequence-item {
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .consequence-item span {
+        font-size: 14px;
+    }
+
+    .icon-box {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        border-radius: 8px;
+    }
+
+    .icon-box svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Debt notification */
+    .debt-notification {
+        padding: 18px;
+        margin-bottom: 24px;
+        border-radius: var(--radius-sm);
+    }
+
+    .warning-line {
+        font-size: 14px;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .warning-line svg {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+    }
+
+    /* Negotiation */
+    .negotiation-wrapper {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .negotiation-wrapper .card {
+        padding: 24px 16px;
+        border-radius: var(--radius-md);
+    }
+
+    .negotiation-icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 16px;
+    }
+
+    .negotiation-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .options-grid {
+        gap: 16px;
+        margin: 24px 0;
+    }
+
+    .payment-card {
+        padding: 20px 16px;
+        border-radius: var(--radius-md);
+        max-width: 100%;
+    }
+
+    .payment-title {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    .payment-amount {
+        font-size: 26px;
+        margin-bottom: 16px;
+    }
+
+    .benefit-list li {
+        font-size: 12px;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .benefit-list .check-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Loading screen */
+    .pulsate-logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 24px;
+    }
+
+    .pulsate-logo img {
+        width: 56px !important;
+        margin-top: 20px !important;
+    }
+
+    .progress-track {
+        height: 6px;
+        margin: 20px 0;
+    }
+
+    /* Footer */
+    .main-footer {
+        padding: 24px 16px;
+    }
+
+    .footer-text {
+        font-size: 11px;
+    }
+}
+
+/* ---- Medium phones / small tablets (481px - 767px) ---- */
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .main-header {
+        padding: 14px 0;
+    }
+
+    .logo {
+        height: 34px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .card {
+        padding: 32px 28px;
+    }
+
+    .payment-amount {
+        font-size: 28px;
+    }
+
+    .negotiation-icon {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+/* ---- Disable hover effects for touch devices ---- */
+@media (hover: none) and (pointer: coarse) {
+    .btn-primary:hover {
+        transform: none;
+        box-shadow: 0 4px 15px rgba(233, 12, 141, 0.3);
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    }
+
+    .payment-card:hover {
+        border-color: var(--border-soft);
+        transform: none;
+        box-shadow: var(--card-shadow);
+    }
+
+    .btn-outline:hover {
+        background: transparent;
+    }
+
+    /* Add active states for touch instead */
+    .btn-primary:active {
+        transform: scale(0.97);
+        opacity: 0.9;
+    }
+
+    .btn-outline:active {
+        background: var(--primary-soft);
+        transform: scale(0.97);
+    }
+
+    .payment-card:active {
+        border-color: var(--primary);
+        transform: scale(0.98);
+    }
+}
+
+/* ---- Landscape orientation on phones ---- */
+@media (max-height: 500px) and (orientation: landscape) {
+    main {
+        padding: 12px 16px;
+        align-items: flex-start;
+    }
+
+    .card {
+        padding: 20px 18px;
+    }
+
+    .pulsate-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    p {
+        margin-bottom: 12px;
+    }
+
+    .negotiation-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 12px;
+    }
+}
